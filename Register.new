@@ -1,0 +1,129 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Membership Registration | NuruTajika</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<header class="site-header">
+<a class="brand" href="index.html">
+NuruTajika <span>Bridge Connect</span>
+</a>
+<nav>
+<a href="index.html">Home</a>
+<a href="opportunities.html">Opportunities</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<main class="page">
+<p class="eyebrow">JOIN OUR COMMUNITY</p>
+
+<h1>Membership Registration</h1>
+
+<p class="lead">
+Become part of NuruTajika Bridge Connect and access shared opportunities, jobs, scholarships and business connections.
+</p>
+
+<div class="notice">
+<strong>Membership fee: KSh 50</strong><br>
+Pay via M-Pesa to: <strong>0705064644</strong><br>
+Keep your M-Pesa transaction confirmation for verification.
+</div>
+
+<h2>Applicant Details</h2>
+
+<form id="membershipForm">
+
+<label for="fullname">Full Name</label>
+<input id="fullname" name="fullname" type="text"
+placeholder="Enter your full name" required>
+
+<label for="phone">Phone Number</label>
+<input id="phone" name="phone" type="tel"
+placeholder="07XXXXXXXX" required>
+
+<label for="email">Email Address</label>
+<input id="email" name="email" type="email"
+placeholder="Enter your email" required>
+
+<label for="referral">Referral Code (Optional)</label>
+<input id="referral" name="referral" type="text"
+placeholder="Enter referral code if available">
+
+<label for="transaction">M-Pesa Transaction Code</label>
+<input id="transaction" name="transaction" type="text"
+placeholder="Enter payment confirmation code" required>
+
+<label>
+<input type="checkbox" required>
+I confirm that the information provided is correct.
+</label>
+
+<button type="submit" class="btn">
+Submit Membership Application
+</button>
+
+</form>
+
+<div class="notice">
+<strong>What happens next?</strong>
+<ol>
+<li>Submit your application through WhatsApp.</li>
+<li>The administrator checks your payment manually.</li>
+<li>Your application is reviewed.</li>
+<li>You will receive an approval or rejection message.</li>
+</ol>
+</div>
+
+<p class="small">
+Never share your M-Pesa PIN, banking password or OTP.
+Payment does not guarantee membership approval.
+</p>
+
+<p class="small">
+Account passwords will be securely created through the member account system once it is connected. Never send your password through WhatsApp.
+</p>
+
+</main>
+
+<footer>
+<a href="privacy.html">Privacy</a>
+<a href="contact.html">Contact</a>
+<p>© <span id="year"></span> NuruTajika Bridge Connect</p>
+</footer>
+
+<script>
+document.getElementById("membershipForm").addEventListener("submit", function(e) {
+e.preventDefault();
+
+const name = document.getElementById("fullname").value;
+const phone = document.getElementById("phone").value;
+const email = document.getElementById("email").value;
+const referral = document.getElementById("referral").value || "None";
+const transaction = document.getElementById("transaction").value;
+
+const message =
+"NEW MEMBERSHIP APPLICATION\n\n" +
+"Name: " + name + "\n" +
+"Phone: " + phone + "\n" +
+"Email: " + email + "\n" +
+"Referral Code: " + referral + "\n" +
+"M-Pesa Transaction Code: " + transaction +
+"\n\nPlease verify my application.";
+
+window.open(
+"https://wa.me/254705064644?text=" + encodeURIComponent(message),
+"_blank"
+);
+});
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
